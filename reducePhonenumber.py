@@ -1,14 +1,14 @@
-def reduce_phoneNumber(x):
+def reduce_phoneNumber(phoneNr):
     total = ""
-    while x > 9:
-        for i in range(0, len(str(x)), 2):
-            if i+1 < len(str(x)):
-                total += str(int(str(x)[i]) + int(str(x)[i+1]))
+    while phoneNr > 9:
+        for number in range(0, len(str(phoneNr)), 2):
+            if number+1 < len(str(phoneNr)):
+                total += str(int(str(phoneNr)[number]) + int(str(phoneNr)[number+1]))
             else:
-                total += str(int(str(x)[-1]))
-        x = int(total)   
+                total += str(int(str(phoneNr)[-1]))
+        phoneNr = int(total)   
         total = ""
-    return x
+    return phoneNr
 
 
 print(reduce_phoneNumber(4783926))
